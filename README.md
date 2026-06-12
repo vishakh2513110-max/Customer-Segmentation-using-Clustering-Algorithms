@@ -13,8 +13,8 @@ This project uses **unsupervised machine learning** techniques to automatically 
 **Marketing Campaign Dataset**
 
 * Total Customers: **2240**
-* Features: **29**
-* Dataset contains customer demographics, purchasing behavior, campaign responses, and spending information.
+* Original Features: **29**
+* Includes customer demographics, purchase history, campaign responses, and spending information.
 
 ### Key Features Used
 
@@ -55,6 +55,8 @@ These features better capture customer behavior than raw attributes alone.
 Applied **Principal Component Analysis (PCA)** to reduce dimensionality and visualize customer segments effectively.
 
 PCA was used only for visualization and not for clustering itself.
+
+PCA reduced the high-dimensional feature space into principal components, making cluster visualization easier while preserving most of the underlying data variance.
 
 ### 4. Finding Optimal Number of Clusters
 
@@ -97,6 +99,19 @@ Therefore, **Silhouette Score** was used to evaluate cluster quality.
 K-Means achieved a higher Silhouette Score, indicating better cluster separation and cohesion.
 
 Therefore, **K-Means was selected as the final clustering algorithm.**
+
+---
+
+## Customer Segments Identified
+
+The clustering process identified four distinct customer groups:
+
+1. High-Value Customers
+2. Budget-Conscious Customers
+3. Moderate Spenders
+4. Affluent Families
+
+These segments can be targeted with personalized marketing strategies and business campaigns.
 
 ---
 
@@ -149,7 +164,18 @@ Customer segmentation enables organizations to:
 ## Future Improvements
 
 * Evaluate DBSCAN for density-based clustering
-* Explore Gaussian Mixture Models (GMM)
-* Add SHAP-style cluster interpretation
-* Build an interactive Streamlit dashboard
+* Explore Gaussian Mixture Models (GMM) for probabilistic clustering
+* Build an interactive Streamlit dashboard for customer segment exploration
 * Deploy the segmentation pipeline for real-time customer analysis
+
+---
+
+## Skills Demonstrated
+
+* Exploratory Data Analysis (EDA)
+* Feature Engineering
+* Data Preprocessing
+* Dimensionality Reduction (PCA)
+* Unsupervised Machine Learning
+* Cluster Evaluation
+* Business-Oriented Data Analysis
