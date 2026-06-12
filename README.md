@@ -4,17 +4,17 @@
 
 Businesses often have thousands of customers with different demographics, purchasing habits, and spending behaviors. Treating all customers the same can lead to inefficient marketing campaigns and lower customer engagement.
 
-This project uses **unsupervised machine learning** techniques to automatically segment customers into meaningful groups, enabling businesses to design targeted marketing strategies and improve customer retention.
+This project uses **unsupervised machine learning** techniques to automatically segment customers into meaningful groups, enabling businesses to design targeted marketing strategies, improve customer retention, and optimize marketing efforts.
 
 ---
 
 ## Dataset
 
-**Marketing Campaign Dataset**
+### Marketing Campaign Dataset
 
 * Total Customers: **2240**
 * Original Features: **29**
-* Includes customer demographics, purchase history, campaign responses, and spending information.
+* Contains customer demographics, purchase history, campaign responses, and spending information.
 
 ### Key Features Used
 
@@ -48,7 +48,7 @@ Created meaningful business-oriented features:
 * Total_Children
 * Age
 
-These features better capture customer behavior than raw attributes alone.
+These engineered features better capture customer behavior than raw attributes alone.
 
 ### 3. Dimensionality Reduction
 
@@ -56,15 +56,13 @@ Applied **Principal Component Analysis (PCA)** to reduce dimensionality and visu
 
 PCA was used only for visualization and not for clustering itself.
 
-PCA reduced the high-dimensional feature space into principal components, making cluster visualization easier while preserving most of the underlying data variance.
+PCA simplified the high-dimensional feature space while preserving most of the underlying variance, making cluster visualization easier and more interpretable.
 
-### 4. Finding Optimal Number of Clusters
+### 4. Finding the Optimal Number of Clusters
 
-Used the **Elbow Method** to determine the optimal number of clusters.
+Used the **Elbow Method** to determine the optimal number of customer segments.
 
-The elbow point suggested:
-
-* Optimal Clusters (K) = **4**
+**Optimal Clusters (K) = 4**
 
 ---
 
@@ -79,24 +77,24 @@ Applied K-Means clustering with:
 
 ### Hierarchical Clustering
 
-Applied Agglomerative (Hierarchical) Clustering for comparison.
+Applied Agglomerative (Hierarchical) Clustering to compare clustering performance.
 
 ---
 
 ## Algorithm Evaluation
 
-Since clustering is an unsupervised learning task, traditional metrics such as Accuracy, Precision, Recall, and F1-score cannot be used.
+Since clustering is an unsupervised learning task, traditional metrics such as Accuracy, Precision, Recall, and F1-Score cannot be used.
 
-Therefore, **Silhouette Score** was used to evaluate cluster quality.
+Therefore, **Silhouette Score** was used to evaluate cluster quality based on cluster cohesion and separation.
 
 | Algorithm                    | Silhouette Score |
 | ---------------------------- | ---------------- |
-| K-Means                      | 0.433            |
+| K-Means                      | **0.433**        |
 | Hierarchical (Agglomerative) | 0.364            |
 
 ### Final Model Selection
 
-K-Means achieved a higher Silhouette Score, indicating better cluster separation and cohesion.
+K-Means achieved the highest Silhouette Score, indicating better cluster separation and compactness.
 
 Therefore, **K-Means was selected as the final clustering algorithm.**
 
@@ -111,17 +109,17 @@ The clustering process identified four distinct customer groups:
 3. Moderate Spenders
 4. Affluent Families
 
-These segments can be targeted with personalized marketing strategies and business campaigns.
+These customer segments can be targeted with personalized marketing strategies and business campaigns.
 
 ---
 
 ## Key Results
 
-* Processed and analyzed a marketing campaign dataset containing 2240 customers and 29 features.
+* Processed and analyzed a marketing campaign dataset containing **2240 customers** and **29 features**.
 * Compared K-Means and Hierarchical Clustering algorithms.
-* Determined the optimal number of clusters (K=4) using the Elbow Method.
-* Achieved a Silhouette Score of 0.433 using K-Means.
-* Achieved a Silhouette Score of 0.364 using Hierarchical Clustering.
+* Determined the optimal number of clusters (**K = 4**) using the Elbow Method.
+* Achieved a **Silhouette Score of 0.433** using K-Means.
+* Achieved a **Silhouette Score of 0.364** using Hierarchical Clustering.
 * Selected K-Means as the final clustering algorithm due to superior cluster separation and cohesion.
 * Generated business-oriented customer segments for targeted marketing strategies.
 
@@ -136,6 +134,7 @@ Customer segmentation enables organizations to:
 * Improve customer retention
 * Optimize promotional spending
 * Personalize customer engagement strategies
+* Improve overall marketing effectiveness
 
 ---
 
@@ -153,9 +152,10 @@ Customer segmentation enables organizations to:
 
 * K-Means Clustering
 * Hierarchical Clustering
-* PCA
+* Principal Component Analysis (PCA)
 * StandardScaler
 * One-Hot Encoding
+* Feature Engineering
 * Elbow Method
 * Silhouette Score
 
@@ -164,7 +164,7 @@ Customer segmentation enables organizations to:
 ## Future Improvements
 
 * Evaluate DBSCAN for density-based clustering
-* Explore Gaussian Mixture Models (GMM) for probabilistic clustering
+* Explore Gaussian Mixture Models (GMM)
 * Build an interactive Streamlit dashboard for customer segment exploration
 * Deploy the segmentation pipeline for real-time customer analysis
 
@@ -173,9 +173,10 @@ Customer segmentation enables organizations to:
 ## Skills Demonstrated
 
 * Exploratory Data Analysis (EDA)
+* Data Cleaning and Preprocessing
 * Feature Engineering
-* Data Preprocessing
 * Dimensionality Reduction (PCA)
 * Unsupervised Machine Learning
 * Cluster Evaluation
+* Data Visualization
 * Business-Oriented Data Analysis
